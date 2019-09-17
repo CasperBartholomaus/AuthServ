@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const User = mongoose.model("User");
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ USER CONTROLLER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-const setUser = function (req, res){
+const registrerUser = function (req, res){
     if(!req.body.name && !req.body.password){
         res.send({
             status: "error",
@@ -28,22 +28,18 @@ const setUser = function (req, res){
     const {name, password} = req.body;
     const user = new User({name , password});
     let result = {};
-    let status = 201;
 
     user.save(function(err, user){
         if(!err){
-            result.status = status;
             result.result = user;
         } else {
-            status = 500;
-            result.status = status;
             result.error = err;
         }
-        res.status(status).send(result);
+        res.send(result);
     });
 
 };
 
 module.exports = {
-    setUser,
-}
+    registrerUser,
+};

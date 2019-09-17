@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SETUP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-const dbURL = "mongodb://localhost/Users";
+const dbURL = "mongodb://localhost/AuthServer";
 mongoose.connect(dbURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
