@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CONFIGURATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 const app = express();
+const db = require("./db/config");
 const environment = process.env.NODE_ENV;
 const stage = require("./config")[environment];
 
